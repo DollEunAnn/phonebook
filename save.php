@@ -3,17 +3,17 @@
 
 	<?php
 	
-	$file = fopen('phonebook.txt',"a");
+	// $file = fopen('phonebook.txt',"a");
 	$fname = $_POST["first_name"];
 	$lname = $_POST["last_name"];
 	$number = $_POST["number"];
-	$fullname = "$lname,$fname,$number \n";
+	$fullname = "$lname,$fname,$number";
 
-	fwrite($file,$fullname);
-	fclose($file);
+	// fwrite($file,$fullname);
+	// fclose($file);
 
-	// $file = file_put_contents('phonebook.txt', $fullname.PHP_EOL , FILE_APPEND | LOCK_EX);
-
+	$file = file_put_contents('phonebook.txt', $fullname.PHP_EOL , FILE_APPEND | LOCK_EX);
+	
 	echo "$lname,$fname,$number";
 	?>
 
